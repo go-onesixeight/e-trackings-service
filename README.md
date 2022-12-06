@@ -1,2 +1,4 @@
 ## LINE ChatBot ติดตามสถานะ ETRACKING ของ ไปรษณีย์ไทย
-reply message, flex message [MIT licensed](LICENSE).
+สร้าง LINE Chatbot + Reply Message และ Flex Message.
+
+![image.png](./image.png) ![image-1.png](./image-1.png)
