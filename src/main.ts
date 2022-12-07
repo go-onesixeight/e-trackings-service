@@ -11,8 +11,9 @@ async function bootstrap() {
     const configService = app.get(ConfigService);
     const version = process.env.VERSION ?? configService.get("VERSION");
     const port = process.env.API_PORT ?? configService.get("API_PORT");
+    const environment = process.env.NODE_ENV;
     const config = new DocumentBuilder()
-      .setTitle("ETrackings")
+      .setTitle(`ETrackings ${environment}`)
       .setDescription("The ETrackings API description")
       .setVersion(`v${version}`)
       .addTag("ETrackings")
@@ -27,7 +28,7 @@ async function bootstrap() {
     await app.listen(port, "0.0.0.0");
     logger.log(`Application listening on version ${version}`);
     logger.log(`Application listening on port ${port}`);
-    logger.log(`Application listening on ENV ${process.env.NODE_ENV ?? "dev"}`);
+    logger.log(`Application listening on ENV ${environment}`);
   } catch (error) {
     console.log(`Application catch error msg ! ${error.message ?? ""}`)
   }
